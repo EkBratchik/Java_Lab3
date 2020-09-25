@@ -10,16 +10,18 @@ public class Main {
             System.out.println(phrase1);
 
             Scanner k = new Scanner(System.in);
-            System.out.print("Input a number: ");
+            System.out.print("Введите k: ");
             int num = k.nextInt();
 
-            String formattedText = remove_first_words(phrase1, num);
+            String formattedText = removeFirstWords(phrase1, num);
 
             System.out.println("****************");
             System.out.print(formattedText);
+
+
         }
 
-        public static String remove_first_words(String text, int count){
+        public static String removeFirstWords(String text, int count){
             StringBuilder newText = new StringBuilder();
             for (String line : text.split("\n")) {
                 String[] allWords = line.split(" ");
