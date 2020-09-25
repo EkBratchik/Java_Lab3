@@ -4,21 +4,21 @@ import java.util.Scanner;
 public class Main {
 
         public static void main(String []args){
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Введите любое слово или фразу: ");
-            String phrase1 = sc.nextLine();
-            System.out.println(phrase1);
+            try (Scanner sc = new Scanner(System.in)) {
+                System.out.println("Введите любое слово или фразу: ");
+                String phrase1 = sc.nextLine();
+                System.out.println(phrase1);
 
-            Scanner k = new Scanner(System.in);
-            System.out.print("Введите k: ");
-            int num = k.nextInt();
+                System.out.print("Введите k: ");
+                int num = sc.nextInt();
 
-            String formattedText = removeFirstWords(phrase1, num);
+                String formattedText = removeFirstWords(phrase1, num);
+                System.out.println("****************");
+                System.out.print(formattedText);
 
-            System.out.println("****************");
-            System.out.print(formattedText);
-
-
+            } catch (Exception ex) {
+                System.out.println("Error" + ex);
+            }
         }
 
         public static String removeFirstWords(String text, int count){
