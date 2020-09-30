@@ -7,12 +7,12 @@ public class Main {
             try (Scanner sc = new Scanner(System.in)) {
                 System.out.println("Введите любое слово или фразу: ");
                 String phrase1 = sc.nextLine();
-                System.out.println(phrase1);
+                System.out.println(str);
 
                 System.out.print("Введите k: ");
                 int num = sc.nextInt();
 
-                String formattedText = removeFirstWords(phrase1, num);
+                String formattedText = removeFirstWords(str, num);
                 System.out.println("****************");
                 System.out.print(formattedText);
 
