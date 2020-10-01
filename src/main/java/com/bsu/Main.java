@@ -6,7 +6,7 @@ public class Main {
         public static void main(String []args){
             try (Scanner sc = new Scanner(System.in)) {
                 System.out.println("Введите любое слово или фразу: ");
-                String phrase1 = sc.nextLine();
+                String str = sc.nextLine();
                 System.out.println(str);
 
                 System.out.print("Введите k: ");
@@ -27,13 +27,19 @@ public class Main {
                 String[] allWords = line.split(" ");
 
                 if (allWords.length <= count) {
-                    continue;
+                    newText.append(" ");
+                    break;
+                }
+                if (count < 0){
+                    newText.append("Error k<0 ");
+                    break;
                 }
 
                 String[] neededWords = Arrays.copyOfRange(allWords, count, allWords.length);
                 newText.append(String.join(" ", neededWords));
                 newText.append("\n");
             }
+            newText.deleteCharAt(newText.length()-1);
             return newText.toString();
         }
 
